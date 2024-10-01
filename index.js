@@ -13,12 +13,14 @@ let groceryList = ["Milk", "Oreos"];
 
 //////////////////////////////////////////////////////////////////////
 // 1. Create a function that adds an item to the list.
-// Return the new item.
-
+ // Return the new item.
+function groceryListAdder(ItemAdded){
+  groceryList.push(ItemAdded);
+  console.log("item Added :"+ ItemAdded)
+  return ItemAdded
+}
 // Code to modularize:
-let item1 = "Animal Crackers";
-groceryList.push(item1);
-console.log("Item added: " + item1);
+// let item1 = "Animal Crackers";
 
 let item2 = "Avocados";
 groceryList.push(item2);
@@ -29,9 +31,13 @@ groceryList.push(item3);
 console.log("Item added: " + item3);
 
 //////////////////////////////////////////////////////////////////////
-// 2. Create a function that removes the last item from the list.
-// Return the removed item.
-
+2. // Create a function that removes the last item from the list.
+ //Return the removed item.
+function groceryListremover(){
+   groceryList.pop()
+   console.log("item removed")
+   return groceryList.length
+}
 // Code to modularize:
 let itemToRemove1 = groceryList[groceryList.length - 1];
 groceryList.pop();
@@ -44,6 +50,12 @@ console.log("Item removed: " + itemToRemove2);
 //////////////////////////////////////////////////////////////////////
 // 3. Create a function that updates a specific item in the list.
 // Return the updated item.
+
+function groceryListUpdate(itemUpdated, oldItem){
+  groceryList.splice(oldItem, itemUpdated)
+  console.log("Item Updated:" + itemUpdated)
+  return itemUpdated
+}
 
 // Code to modularize:
 let indexToUpdate1 = 0;
@@ -62,6 +74,10 @@ console.log("Item updated from " + oldItem2 + " to " + newItem2);
 // 4. Create a function that shows the current grocery list.
 // Returns the grocery list array.
 
+function currentGroceryList(){
+  return groceryList.length
+}
+
 // Code to modularize:
 if (groceryList.length === 0) {
   console.log("The grocery list is empty.");
@@ -79,6 +95,7 @@ if (groceryList.length === 0) {
 // It should log the following "The grocery list has x item(s).", with x being how many items are left.
 // Returns the grocery list length.
 
+function 
 //////////////////////////////////////////////////////////////////////
 // 2. Write a function that clears the whole grocery list.
 // It should log the following "The grocery list is now empty."

@@ -95,12 +95,18 @@ if (groceryList.length === 0) {
 // It should log the following "The grocery list has x item(s).", with x being how many items are left.
 // Returns the grocery list length.
 
-function 
+function itemsLeft(){
+  console.log("The grocery list has " + groceryList.length )
+  return 
+}
 //////////////////////////////////////////////////////////////////////
 // 2. Write a function that clears the whole grocery list.
 // It should log the following "The grocery list is now empty."
 // Returns the empty grocery list.
-
+function clearingList(){
+  delete groceryList.length
+  return groceryList.length
+}
 //////////////////////////////////////////////////////////////////////
 // Part 3 - Calling Functions
 // You want to create a charcuterie board so now it's time to call the functions you wrote in Part 1 and Part 2.

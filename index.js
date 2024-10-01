@@ -51,18 +51,16 @@ console.log("Item removed: " + itemToRemove2);
 // 3. Create a function that updates a specific item in the list.
 // Return the updated item.
 
-function groceryListUpdate(itemUpdated, oldItem){
-  groceryList.splice(oldItem, itemUpdated)
-  console.log("Item Updated:" + itemUpdated)
-  return itemUpdated
+function groceryListUpdate(newItem1,indexToUpdate1){
+  let oldItem1 = groceryList[indexToUpdate1];
+groceryList[indexToUpdate1] = newItem1;
+console.log("Item updated from " + oldItem1 + " to " + newItem1);
 }
 
 // Code to modularize:
 let indexToUpdate1 = 0;
 let newItem1 = "Bananas";
-let oldItem1 = groceryList[indexToUpdate1];
-groceryList[indexToUpdate1] = newItem1;
-console.log("Item updated from " + oldItem1 + " to " + newItem1);
+
 
 let indexToUpdate2 = 2;
 let newItem2 = "Olive Oil";
@@ -75,15 +73,16 @@ console.log("Item updated from " + oldItem2 + " to " + newItem2);
 // Returns the grocery list array.
 
 function currentGroceryList(){
-  return groceryList.length
-}
-
-// Code to modularize:
-if (groceryList.length === 0) {
+  if (groceryList.length === 0) {
   console.log("The grocery list is empty.");
 } else {
   console.log("Grocery List: " + groceryList);
 }
+  return groceryList.length
+}
+
+// Code to modularize:
+
 
 //////////////////////////////////////////////////////////////////////
 
@@ -97,21 +96,24 @@ if (groceryList.length === 0) {
 
 function itemsLeft(){
   console.log("The grocery list has " + groceryList.length )
-  return 
+  return groceryList.length
 }
 //////////////////////////////////////////////////////////////////////
 // 2. Write a function that clears the whole grocery list.
 // It should log the following "The grocery list is now empty."
 // Returns the empty grocery list.
 function clearingList(){
-  delete groceryList.length
-  return groceryList.length
+   groceryList= []
+   console.log("The grocery list is now empty")
+  return groceryList
 }
 //////////////////////////////////////////////////////////////////////
 // Part 3 - Calling Functions
 // You want to create a charcuterie board so now it's time to call the functions you wrote in Part 1 and Part 2.
 // Your goal is to achieve the console output below by calling your functions.
 // Remember that your functions should've already included console logs, therefore you are only calling your functions NOT logging them below.
+// console.log("groceryList")
+// let groceryList=["Gouda Cheese","Brie Cheese","Swiss Cheese"]
 
 /*
 // The grocery list is cleared
@@ -127,33 +129,35 @@ function clearingList(){
 // Item updated from Chorizo to Jamon
 // The grocery list has 6 item(s)
 // Item added: Pita Chips
-// Grocery List: Gouda Cheese, Brie Cheese, Green Grapes, Prosciutto, Jamon, Multigrain Crackers, Pita Chips
+Grocery List=["grocery Gouda Cheese", "Brie Cheese", "Green Grapes", "Prosciutto", "Jamon", "Multigrain Crackers", "Pita Chips"
 */
 
 // Call 1: Clear the grocery list
-
+ clearingList()
 // Call 2: Add Gouda Cheese
-
+groceryListAdder("Gouda Cheese")
 // Call 3: Add Swiss Cheese
-
+groceryListAdder("Swiss Cheese")
 // Call 4: Remove Swiss Cheese
-
+groceryListremover("Swiss Cheese")
 // Call 5: Add Green Grapes
-
+groceryListAdder("Green Grapes")
 // Call 6: Add Prosciutto
-
+groceryListAdder("Prosciutto")
 // Call 7: Add Chorizo
-
+groceryListAdder("Chorizo")
 // Call 8: Add Multigrain Crackers
+groceryListAdder("Multigrain Crackers")
+// Call 9: Update Chorizo to Jamonconsolee
+console.log(groceryList)
 
-// Call 9: Update Chorizo to Jamon
-
+groceryListUpdate("Jamon", 3)
 // Call 10: Show the count of items
-
+groceryList.length
 // Call 11: Add Pita Chips
-
+groceryListAdder("Pita Chips ")
 // Call 12: Show the final list
-
+console.log(groceryList)
 
 //////////////////////////////////////////////////////////////////////
 // Extra Credit - Improving functions
